@@ -1,5 +1,7 @@
-# import unittest
-# from test. import _testbuffer
+import unittest
 
-# if __name == '__main__':
-#     unittest.main()
+from tests.country_test import TestCountry
+from tests.city_test import TestCity
+
+if __name__ == '__main__':
+    unittest.main()
