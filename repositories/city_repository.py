@@ -22,7 +22,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        country = country_repository.find(row["country_id"])
+        country = country_repository.select(row['country_id'])
         city = City(row['name'], country, row['completed'], row['id'])
         cities.append(city)
     return cities
@@ -31,10 +31,9 @@ def select(id):
     city = None
     sql = "SELECT * FROM city WHERE id = %s"
     values = [id]
-    results = run_sql(sql, values)
+    result = run_sql(sql, values)[0]
 
-    if results:
-        result = results[0]
+    if result is not None:
         country = country_repository.select(result["country_id"])
         city = City(result["name"], country, result["completed"], result["id"])
     return city

@@ -29,10 +29,10 @@ def select(id):
     country = None
     sql = "SELECT * FROM country WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)
+    result = run_sql(sql, values)[0]
 
     if result is not None:
-        country = Country(result["name"], result["id"])
+        country = Country(result['name'], result['id'])
     return country
 
 def delete(id):

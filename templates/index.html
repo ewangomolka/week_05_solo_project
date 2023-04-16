@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations</title>
+</head>
+<body>
+    <header>
+        <h1>All Destinations</h1>
+    </header>
+    <main>
+        <nav>
+            <ul class="menu">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/all_destinations/completed">Completed Trips</a></li>
+                <li><a href="/all_destinations/to-do">To-Do List</a></li>
+                <li><a href="/all_destinations/new">Create New Trip</a></li>
+            </ul>
+        </nav>
+        <article>
+            {% for city in city_list %}
+                <p>
+                    {{city.country}} - {{city.name}} - {{city.completed}}
+                </p>
+                <a class="moreinfo" href="{{ url_for('show_trip', city_id=city.id) }}">View Trip</a>
+
+                    <form action="all_destinations/{{ city.id }}/delete" method="POST">
+                        <input type="submit" value="Delete Trip">
+                    </form>
+            {% endfor %}
+        </article>
+    </main>
+    <footer>
+        <h4>&copy; Blizzard Entertainment</h4>
+    </footer>
+</body>
+</html>

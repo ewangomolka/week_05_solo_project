@@ -46,5 +46,5 @@ city_repository.save(city_6)
 city_7 = City("Numbani", country_6, False)
 city_repository.save(city_7)
 
-country_repository.select_all()
 city_repository.select_all()
+country_repository.select_all()

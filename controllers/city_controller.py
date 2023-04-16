@@ -18,15 +18,15 @@ def all_destinations():
 #SHOW
 #GET /all_destinations/<id>
 @city_blueprint.route("/all_destinations/<id>")
-def show_city(id):
+def show_trip(id):
     city = city_repository.select(id)
-    return render_template("all_destinations/show_city.html", city=city)
+    return render_template("all_destinations/show_trip.html", city=city)
 #SHOW
-#GET /all_destinations/country/<id>
-@city_blueprint.route("/all_destinations/country/<id>")
-def show_country(id):
-    country = country_repository.select(id)
-    return render_template("all_destinations/show_country.html", country=country)
+# #GET /all_destinations/country/<id>
+# @city_blueprint.route("/all_destinations/country/<id>")
+# def show_country(id):
+#     country = country_repository.select(id)
+#     return render_template("all_destinations/show_country.html", country=country)
 #SHOW 
 # GET /all_destinations/completed
 @city_blueprint.route("/all_destinations/completed")
