@@ -21,11 +21,14 @@
     <article>
         <p>situated in {{ city.country.name }}, {{ city.name }} has many beautiful attractions and activities.</p>
         {% if city.completed == True %}
-        <span>City Saved! Good job Winston!</span>
+        <span><h3>City Saved! Good job Winston!</h3></span>
         {% else %}
-        <span>City in Peril! Reinforcements Required!</span>
+        <span><h3>City in Peril! Reinforcements Required!</h3></span>
         {% endif %}
     </article>
+    <form action="/destinations/{{ city.id }}" method="post">
+        <input type="submit" value="mission complete">
+    </form>
     <footer>
         <h4>&copy; Blizzard Entertainment</h4>
     </footer>

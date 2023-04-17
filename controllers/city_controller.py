@@ -39,12 +39,13 @@ def show_uncompleted():
     return render_template("destinations/to-do.html", all_cities=all_cities)
 #EDIT
 #GET /all_destinations/<id>/edit
-@city_blueprint.route("/destinations/<id>", methods=["POST"])
-def books_update(id):
-    city = city_repository(id)
-    checked_out = "checked_out" in request.form
-    city.toggle_check_out(checked_out)
-    return redirect("/destinatins/<id>" + id)
+@city_blueprint.route("/destinations/<id>", methods=['POST'])
+def edit_trip(id):
+    city = city_repository.select(id)
+    city.mark_visited()
+    city_repository.update(city)
+    return redirect("/destinations/" + id)
+
 #CREATE
 #POST /all_destinations
 @city_blueprint.route("/destinations", methods=['POST'])

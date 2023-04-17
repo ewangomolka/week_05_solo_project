@@ -4,3 +4,6 @@ class City:
         self.country = country
         self.completed = completed
         self.id = id
+
+    def mark_visited(self):
+        self.completed = True if False else True

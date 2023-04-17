@@ -21,7 +21,7 @@
     <article>
         {% for city in all_cities %}
             {% if city.completed == True %}
-            <p>{{ city.country.name }} - {{ city.name }}</p>
+            <p>{{ city.country.name }} - <a href="/destinations/{{ city.id }}">{{ city.name }}</a></p>
             {% endif %}
         {% endfor %}
     </article>
