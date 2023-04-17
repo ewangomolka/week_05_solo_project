@@ -6,4 +6,7 @@ class City:
         self.id = id
 
     def mark_visited(self):
-        self.completed = True if False else True
+        if self.completed == False:
+            self.completed = True
+        else:
+            self.completed = False

@@ -16,6 +16,7 @@
             <li><a href="/destinations">All Destinations</a></li>
             <li><a href="/destinations/completed">Completed Trips</a></li>
             <li><a href="/destinations/to-do">To-Do List</a></li>
+            <li><a href="/destinations/new">Create New Trip</a></li>
         </ul>
     </nav>
     <article>
@@ -27,7 +28,7 @@
         {% endif %}
     </article>
     <form action="/destinations/{{ city.id }}" method="post">
-        <input type="submit" value="mission complete">
+        <input type="submit" value="update mission">
     </form>
     <footer>
         <h4>&copy; Blizzard Entertainment</h4>
