@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>{{ city.name }}</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/destinations">All Destinations</a></li>
+            <li><a href="/destinations/to-do">To-Do List</a></li>
+            <li><a href="/destinations/new">Create New Trip</a></li>
+        </ul>
+    </nav>
+    <article>
+        {% for city in all_completed %}
+            {% if city.completed == True %}
+            <p>{{ city.country.name }} - {{ city.name }}</p>
+        {% endfor %}
+    </article>
+    <footer>
+        <h4>&copy; Blizzard Entertainment</h4>
+    </footer>
+</body>
+</html>

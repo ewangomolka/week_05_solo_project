@@ -16,13 +16,14 @@ def home():
 @city_blueprint.route("/destinations")
 def all_destinations():
     destinations = city_repository.select_all()
-    return render_template("destinations/index.html", cities=destinations)
+    print(len(destinations))
+    return render_template("index.html", city_list=destinations)
 #SHOW
 #GET /all_destinations/<id>
 @city_blueprint.route("/destinations/<id>")
 def show_trip(id):
     city = city_repository.select(id)
-    return render_template("destinations/show_trip.html", city=city)
+    return render_template("destinations/show_trip.html", all_completed=city)
 
 #SHOW 
 # GET /all_destinations/completed
@@ -47,13 +48,15 @@ def edit_trip(id):
 #POST /all_destinations
 @city_blueprint.route("/destinations", methods=['POST'])
 def create_trip():
+    print("hello")
     name = request.form['name']
-    country_id = request.form['country_id']
-    completed = request.form['completed']
-    country = country_repository.select(country_id)
-    city = City(name, country, completed)
+    country_name = request.form['country']
+    country = country_repository.select_by_name(country_name)
+    city = City(name, country, completed=False)
     city_repository.save(city)
-    return redirect("/destinations")
+    destinations = city_repository.select_all()
+    return render_template("index.html", all_countries=destinations)
+
 #DELETE
 #POST /all_destinations/<id>/delete
 @city_blueprint.route("/destinations/<id>/delete", methods=['POST'])

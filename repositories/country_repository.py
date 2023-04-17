@@ -35,6 +35,16 @@ def select(id):
         country = Country(result['name'], result['id'])
     return country
 
+def select_by_name(name):
+    country = None
+    sql = "SELECT * FROM country WHERE name = %s"
+    values = [name]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        country = Country(result['name'], result['id'])
+    return country
+
 def delete(id):
     sql = "DELETE FROM city WHERE id = %s"
     values = [id]
