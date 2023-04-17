@@ -28,15 +28,15 @@ def show_trip(id):
 #SHOW 
 # GET /all_destinations/completed
 @city_blueprint.route("/destinations/completed")
-def show_completed(completed):
-    all_completed = city_repository.select(completed)
-    return render_template("destinations/show_completed.html", all_completed=all_completed)
+def show_completed():
+    all_cities = city_repository.select_all()
+    return render_template("destinations/show_completed.html", all_cities=all_cities)
 #SHOW
 #GET /all_destinations/to-do
 @city_blueprint.route("/destinations/to-do")
-def show_uncompleted(completed):
-    all_completed = city_repository.select(completed)
-    return render_template("destinations/to-do.html", all_completed=all_completed)
+def show_uncompleted():
+    all_cities = city_repository.select_all()
+    return render_template("destinations/to-do.html", all_cities=all_cities)
 #EDIT
 #GET /all_destinations/<id>/edit
 @city_blueprint.route("/destinations/<id>/edit")
@@ -50,12 +50,11 @@ def edit_trip(id):
 def create_trip():
     print("hello")
     name = request.form['name']
-    country_name = request.form['country']
-    country = country_repository.select_by_name(country_name)
+    country_id = request.form['country_id']
+    country = country_repository.select(country_id)
     city = City(name, country, completed=False)
     city_repository.save(city)
-    destinations = city_repository.select_all()
-    return render_template("index.html", all_countries=destinations)
+    return redirect("/destinations")
 
 #DELETE
 #POST /all_destinations/<id>/delete

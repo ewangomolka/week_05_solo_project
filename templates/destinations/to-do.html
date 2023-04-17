@@ -8,19 +8,19 @@
 </head>
 <body>
     <header>
-        <h1>Completed Trips</h1>
+        <h1>To-Do List</h1>
     </header>
     <nav>
         <ul>
             <li><a href="/home">Home</a></li>
             <li><a href="/destinations">All Destinations</a></li>
-            <li><a href="/destinations/to-do">To-Do List</a></li>
+            <li><a href="/destinations/completed">Completed Trips</a></li>
             <li><a href="/destinations/new">Create New Trip</a></li>
         </ul>
     </nav>
     <article>
         {% for city in all_cities %}
-            {% if city.completed == True %}
+            {% if city.completed == False %}
             <p>{{ city.country.name }} - {{ city.name }}</p>
             {% endif %}
         {% endfor %}
