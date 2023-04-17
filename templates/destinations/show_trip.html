@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>{{ city.name }}</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/destinations">All Destinations</a></li>
+            <li><a href="/destinations/completed">Completed Trips</a></li>
+            <li><a href="/destinations/to-do">To-Do List</a></li>
+        </ul>
+    </nav>
+    <article>
+        <p>situated in {{ city.country.name }}, {{ city.name }} has many beautiful attractions and activities.</p>
+        {% if city.completed == True %}
+        <span>City Saved! Good job Winston!</span>
+        {% else %}
+        <span>City in Peril! Reinforcements Required!</span>
+        {% endif %}
+    </article>
+    <footer>
+        <h4>&copy; Blizzard Entertainment</h4>
+    </footer>
+</body>
+</html>

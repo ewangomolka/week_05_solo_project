@@ -23,7 +23,7 @@ def all_destinations():
 @city_blueprint.route("/destinations/<id>")
 def show_trip(id):
     city = city_repository.select(id)
-    return render_template("destinations/show_trip.html", all_completed=city)
+    return render_template("destinations/show_trip.html", city=city)
 
 #SHOW 
 # GET /all_destinations/completed
@@ -39,11 +39,12 @@ def show_uncompleted():
     return render_template("destinations/to-do.html", all_cities=all_cities)
 #EDIT
 #GET /all_destinations/<id>/edit
-@city_blueprint.route("/destinations/<id>/edit")
-def edit_trip(id):
-    city = city_repository.select(id)
-    country = country_repository.select_all()
-    return render_template("destinations/edit.html", city=city, all_countries=country)
+@city_blueprint.route("/destinations/<id>", methods=["POST"])
+def books_update(id):
+    city = city_repository(id)
+    checked_out = "checked_out" in request.form
+    city.toggle_check_out(checked_out)
+    return redirect("/destinatins/<id>" + id)
 #CREATE
 #POST /all_destinations
 @city_blueprint.route("/destinations", methods=['POST'])

@@ -22,7 +22,7 @@
         <article>
             {% for city in city_list %}
                 <p>
-                    {{city.country.name}} - {{city.name}} - {{city.completed}}
+                    {{city.country.name}} - <a href="/destinations/{{ city.id }}">{{city.name}}</a>
                 </p>
                     <form action="destinations/{{ city.id }}/delete" method="post">
                         <input type="submit" value="Delete Trip">
