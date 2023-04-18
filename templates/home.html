@@ -8,24 +8,28 @@
     <title>Home</title>
 </head>
 <body>
+    <div class="background">
     <header>
-        <div>
-            <h1>Overwatch Travel</h1>
-        </div>
+
     </header>
     <main>
-        <h3>Welcome Home Winston</h3>
-        <div>
-            <img src="{{ url_for('static', filename='Profile Picture Winston.jpeg') }}" alt="profile picture">
+        <div class="welcome">
+            <div class="image-crop">
+                <img src="{{ url_for('static', filename='Profile Picture Winston.jpeg') }}" alt="profile picture">
+            </div>
+            <div class="text">
+                <h3>&#128075; Welcome Winston</h3>
+            <ul>
+                <li><a href="/destinations">All Missions</a></li>
+                <li><a href="/countries">All Countries</a></li>
+                <li><a href="/destinations/new">Create New Mission</a></li>
+            </ul>
+            </div>
         </div>
-        <ul>
-            <li><a href="/destinations">All Destinations</a></li>
-            <li><a href="/countries">All Countries</a></li>
-            <li><a href="/destinations/new">Create New Trip</a></li>
-        </ul>
     </main>
     <footer>
         <h4>&copy; Blizzard Entertainment</h4>
     </footer>
+    </div>
 </body>
 </html>

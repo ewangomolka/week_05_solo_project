@@ -8,20 +8,21 @@
 </head>
 <body>
     <header>
-        <h1>Completed Trips</h1>
+        <h1>Completed Missions</h1>
     </header>
     <nav>
         <ul>
             <li><a href="/home">Home</a></li>
-            <li><a href="/destinations">All Destinations</a></li>
-            <li><a href="/destinations/to-do">To-Do List</a></li>
-            <li><a href="/destinations/new">Create New Trip</a></li>
+            <li><a href="/destinations">All Missions</a></li>
+            <li><a href="/countries">All Countries</a></li>
+            <li><a href="/destinations/to-do">Missions</a></li>
+            <li><a href="/destinations/new">Create New Mission</a></li>
         </ul>
     </nav>
     <article>
         {% for city in all_cities %}
             {% if city.completed == True %}
-            <p>{{ city.country.name }} - <a href="/destinations/{{ city.id }}">{{ city.name }}</a></p>
+            <p>{{ city.country.name }} - <a href="/destinations/{{ city.id }}">{{ city.name }}</a> - <span> &#9989; </span></p>
             {% endif %}
         {% endfor %}
     </article>

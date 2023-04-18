@@ -14,15 +14,21 @@
         <nav>
             <ul class="menu">
                 <li><a href="/home">Home</a></li>
-                <li><a href="/destinations/completed">Completed Trips</a></li>
-                <li><a href="/destinations/to-do">To-Do List</a></li>
-                <li><a href="/destinations/new">Create New Trip</a></li>
+                <li><a href="/countries">All Countries</a></li>
+                <li><a href="/destinations/completed">Completed Missions</a></li>
+                <li><a href="/destinations/to-do">Missions</a></li>
+                <li><a href="/destinations/new">Create New Mission</a></li>
             </ul>
         </nav>
         <article>
             {% for city in city_list %}
                 <p>
-                    {{city.country.name}} - <a href="/destinations/{{ city.id }}">{{city.name}}</a>
+                    {{city.country.name}} - <a href="/destinations/{{ city.id }}">{{city.name}}</a>:
+                    {% if city.completed %}
+                        <span> &#9989; </span>
+                    {% else %}
+                        <span> &#10060; </span>
+                    {% endif %}
                 </p>
                     <form action="destinations/{{ city.id }}/delete" method="post">
                         <input type="submit" value="Delete Trip">

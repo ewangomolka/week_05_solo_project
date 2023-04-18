@@ -1,6 +1,93 @@
-body {
+html, body {
     height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-image: url(Sky\ Background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: auto;
+    animation: fadeInAnimation ease 4s;
+    animation-delay: 4s opactiy 0;
+    animation-fill-mode: forwards;
+    background-color: beige;
+    padding: 10px;
+    border-radius: 10%;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opactiy: 1;
+    }
+}
+
+.image-crop {
+    height: 350px;
+    width: 350px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 70%;
+}
+
+.image-crop > img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.text {
+    align-items: center;
+    padding-left: 65px;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    color: beige;
 }
 
 
 
+ul {
+    list-style-type: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text {
+    text-align: flex;
+    flex-direction: column;
+    align-items: center;
+}
