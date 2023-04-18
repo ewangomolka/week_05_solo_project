@@ -1,0 +1,102 @@
+html, body, #gridcontainer {
+    height: 100%;
+}
+@font-face {
+    font-family: Overwatch;
+    src: url(Bank\ Sans\ EF\ CY\ Regular.otf)
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Overwatch;
+    background-image: url(ocean\ Large\ 2.jpeg);
+    background-repeat: repeat;
+    background-size: cover;
+    
+}
+
+main {
+    display: flex;
+    width: 100%;
+
+}
+
+nav {
+    width: 50%;
+    height: 100%;
+}
+
+article > p {
+    display: flex;
+    align-items: center;
+    background-color: beige;
+    justify-content: space-evenly;
+    padding: 30px;
+    border-radius: 30%;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profilepic {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 70%;
+}
+
+.profilepic > img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+}
+
+.menu {
+    list-style-type: none;
+    text-decoration: none;
+    justify-content: space-around;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+li {
+    padding: 20px;
+}
+
+.newcountry {
+    padding-left: 20px;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+article > form > input:hover {
+    background-color: orange;
+}
+
+footer {
+    padding-left: 20px;
+    padding-bottom: 20px;
+}

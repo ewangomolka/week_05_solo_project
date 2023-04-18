@@ -1,6 +1,12 @@
 html, body {
     height: 100%;
     margin: 0;
+    font-family: Overwatch;
+}
+
+@font-face {
+    font-family: Overwatch;
+    src: url(Bank\ Sans\ EF\ CY\ Regular.otf);
 }
 
 body {
@@ -17,7 +23,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: auto;
-    animation: fadeInAnimation ease 4s;
+    animation: fadeInAnimation ease 3s;
     animation-delay: 4s opactiy 0;
     animation-fill-mode: forwards;
     background-color: beige;
@@ -51,9 +57,10 @@ body {
 
 main {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 100px;
+    
 }
 
 .text {
@@ -72,7 +79,9 @@ footer {
     color: beige;
 }
 
-
+main > h1 {
+    color: beige;
+}
 
 ul {
     list-style-type: none;

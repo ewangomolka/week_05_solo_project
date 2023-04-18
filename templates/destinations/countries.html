@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='style_countries.css') }}" rel='stylesheet'>
     <title>Countries</title>
 </head>
 <body>
     <header>
         <h1>All Countries</h1>
+        <a href="/home">
+            <div class="profilepic">
+                <img src="{{ url_for('static', filename='Profile Picture Winston Small Small.jpeg') }}" alt="profile picture">
+            </div>
+        </a>
     </header>
     <main>
         <nav>
@@ -18,6 +24,14 @@
                 <li><a href="/destinations/completed">Completed Missions</a></li>
                 <li><a href="/destinations/to-do">Missions</a></li>
                 <li><a href="/destinations/new">Create New Mission</a></li>
+                <li><p>Please add new countries below!</p>
+                    <form class="newcountry" action="/destinations/new" method="post">
+                        <div>
+                            <label for="country"></label>
+                            <input type="text" id="name" name="name" placeholder="Country">
+                        </div>
+                        <button type="submit">Add Country</button>
+                    </form></li>
             </ul>
         </nav>
         <article>
@@ -31,14 +45,6 @@
             {% endfor %}
 
         </form>
-        <p>Please add new countries below!</p>
-    <form class="new country" action="/destinations/new" method="post">
-        <div>
-            <label for="country"></label>
-            <input type="text" id="name" name="name" placeholder="Country">
-        </div>
-        <button type="submit">Add Country</button>
-    </form>
         </article>
     </main>
     <footer>
