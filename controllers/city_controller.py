@@ -71,13 +71,23 @@ def new_trip():
     country = country_repository.select_all()
     return render_template("destinations/new.html", all_countries=country)
 
-#UPDATE
-#PUT (POST) /destinations/<id>/edit_dest
+#EDIT_DEST
+#GET /destinations/<id>/edit_dest
 @city_blueprint.route("/destinations/<id>/edit_dest")
+def edit_dest(id):
+    city = city_repository.select(id)
+    countries = country_repository.select_all()
+    return render_template("/destinations/edit_dest.html", city=city, all_countries=countries)
+
+#UPDATE
+#PUT (POST) /destinations/<id>
+@city_blueprint.route("/destinations/<id>/edit_dest", methods=['POST'])
 def edit_destination(id):
     name = request.form['name']
     country_id = request.form['country_id']
     country = country_repository.select(country_id)
-    city = City(name, country, completed=False)
+    city = city_repository.select(id)
+    city.name = name
+    city.country = country
     city_repository.update(city)
-    return redirect("/destinations/<id>")
+    return redirect("/destinations/" + id )

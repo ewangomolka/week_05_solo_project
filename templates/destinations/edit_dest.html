@@ -8,34 +8,39 @@
 </head>
 <body>
     <header>
-        <h1>Create New Trip</h1>
+
     </header>
     <nav>
         <ul>
             <li><a href="/home">Home</a></li>
             <li><a href="/destinations">All Destinations</a></li>
-            <li><a href="/destinations/completed">Completed Trips</a></li>
+            <li><a href="/destinations/completed">Completed Missions</a></li>
             <li><a href="/destinations/to-do">To-Do List</a></li>
+            <li><a href="/destinations/new">Create New Trip</a></li>
         </ul>
     </nav>
     <article>
-        <form action="/destinations" method="post" >
+        <form action="/destinations/{{ city.id }}/edit_dest" method="post">
+            
             <div>
                 <label for="country">Country:</label>
-                <select id="country" name="country_id" required>
+                <select id="country" name="country_id">
                     {% for country in all_countries %}
-                        <option value="{{ country.id }}">{{ country.name }}</option>
-                    {% endfor %}
-                </select>
+                    <option value="{{ country.id }}"
+                    {% if city.country.id == country.id %} selected="selected"{% endif %}>
+                    {{ country.name }}
+                </option>
+                {% endfor %}
+            </select>
             </div>
+            
             <div>
                 <label for="name">City:</label>
-                <input type="text" id="name" name="name" placeholder="City" required>
+                <input type="text" id="name" name="name" value="{{city.name}}" required>
             </div>
-            <button type="submit">Create New Trip</button>
-        </form>
-        
-    </article>
+                <button type="submit">Update Destination</button>
+        </article>
+    </main>
     <footer>
         <h4>&copy; Blizzard Entertainment</h4>
     </footer>

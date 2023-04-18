@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>{{ city.name }}</h1>
+
     </header>
     <nav>
         <ul>
@@ -20,19 +20,17 @@
         </ul>
     </nav>
     <article>
-        <p>situated in {{ city.country.name }}, {{ city.name }} has many beautiful attractions and activities.</p>
-        {% if city.completed == True %}
-        <span><h3>City Saved! Good job Winston!</h3></span>
-        {% else %}
-        <span><h3>City in Peril! Reinforcements Required!</h3></span>
-        {% endif %}
-    </article>
-    <form action="/destinations/{{ city.id }}" method="post">
-        <input type="submit" value="update mission">
-    </form>
-    <div>
-        <a href="/destinations/{{ city.id }}/edit_dest">Edit Mission</a>
-    </div>
+        <form action="/countries/{{ country.id }}/edit" method="post">
+            <div>
+                <label for="name">Country:</label>
+                <input type="text" id="name" name="name" value="{{country.name}}" required>
+            </div>
+
+            <button type="submit">Update Country</button>
+
+            </form>
+        </article>
+    </main>
     <footer>
         <h4>&copy; Blizzard Entertainment</h4>
     </footer>

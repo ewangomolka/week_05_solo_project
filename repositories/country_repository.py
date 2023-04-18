@@ -46,7 +46,7 @@ def select_by_name(name):
     return country
 
 def delete(id):
-    sql = "DELETE FROM city WHERE id = %s"
+    sql = "DELETE FROM country WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
@@ -60,3 +60,8 @@ def cities(country):
         city = City(row["name"], country, row["completed"], row["id"])
         cities.append(city)
     return cities
+
+def update(country):
+    sql = "UPDATE country SET name = %s WHERE id = %s"
+    values = [country.name, country.id]
+    run_sql(sql, values)
