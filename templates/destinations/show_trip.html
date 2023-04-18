@@ -4,36 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='style_show_trip.css') }}" rel='stylesheet'>
     <title>Document</title>
 </head>
 <body>
     <header>
         <h1>{{ city.name }}</h1>
+        <a href="/home">
+            <div class="profilepic">
+                <img src="{{ url_for('static', filename='Profile Picture Winston Small Small.jpeg') }}" alt="profile picture">
+            </div>
+        </a>
     </header>
     <nav>
-        <ul>
+        <ul class="menu">
             <li><a href="/home">Home</a></li>
             <li><a href="/destinations">All Missions</a></li>
-            <li><a href="/countries">All Countries</a></li>
+            <li><a href="/countries">Countries</a></li>
             <li><a href="/destinations/completed">Completed Missions</a></li>
             <li><a href="/destinations/to-do">Missions</a></li>
             <li><a href="/destinations/new">Create New Mission</a></li>
+            <li><a href="/destinations/{{ city.id }}/edit_dest">Edit Mission</a></li>
         </ul>
     </nav>
     <article>
         <p>situated in {{ city.country.name }}, {{ city.name }} has many beautiful attractions and activities.</p>
         {% if city.completed == True %}
-        <span><h3>City Saved! Good job Winston!</h3></span>
+        <span class="complete"><h3>City Saved! Good job Winston!</h3></span>
         {% else %}
-        <span><h3>City in Peril! Reinforcements Required!</h3></span>
+        <span class="incomplete"><h3>City in Peril! Reinforcements Required!</h3></span>
         {% endif %}
+        <form action="/destinations/{{ city.id }}" method="post">
+            <input type="submit" value="update mission">
+        </form>
     </article>
-    <form action="/destinations/{{ city.id }}" method="post">
-        <input type="submit" value="update mission">
-    </form>
-    <div>
-        <a href="/destinations/{{ city.id }}/edit_dest">Edit Mission</a>
-    </div>
     <footer>
         <h4>&copy; Blizzard Entertainment</h4>
     </footer>
