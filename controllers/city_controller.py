@@ -70,3 +70,14 @@ def delete_trip(id):
 def new_trip():
     country = country_repository.select_all()
     return render_template("destinations/new.html", all_countries=country)
+
+#UPDATE
+#PUT (POST) /destinations/<id>/edit_dest
+@city_blueprint.route("/destinations/<id>/edit_dest")
+def edit_destination(id):
+    name = request.form['name']
+    country_id = request.form['country_id']
+    country = country_repository.select(country_id)
+    city = City(name, country, completed=False)
+    city_repository.update(city)
+    return redirect("/destinations/<id>")
