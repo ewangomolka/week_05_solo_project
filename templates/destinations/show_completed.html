@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='style_completed.css') }}" rel='stylesheet'>
     <title>Document</title>
 </head>
 <body>
     <header>
         <h1>Completed Missions</h1>
+        <a href="/home">
+            <div class="profilepic">
+                <img src="{{ url_for('static', filename='Profile Picture Winston Small Small.jpeg') }}" alt="profile picture">
+            </div>
+        </a>
     </header>
     <nav>
         <ul>
             <li><a href="/home">Home</a></li>
             <li><a href="/destinations">All Missions</a></li>
-            <li><a href="/countries">All Countries</a></li>
+            <li><a href="/countries">Countries</a></li>
             <li><a href="/destinations/to-do">Missions</a></li>
             <li><a href="/destinations/new">Create New Mission</a></li>
         </ul>

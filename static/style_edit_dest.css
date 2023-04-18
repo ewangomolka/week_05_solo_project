@@ -1,0 +1,99 @@
+html, body {
+    height: 100%;
+}
+@font-face {
+    font-family: Overwatch;
+    src: url(Bank\ Sans\ EF\ CY\ Regular.otf)
+}
+
+body {
+    margin: 0;
+    font-family: Overwatch;
+    background-image: url(chernobyl.jpeg);
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+main {
+    display: flex;
+    width: 100%;
+
+}
+
+article {
+    display: flex;
+    align-items: right;
+    position: absolute;
+    right: 0;
+    background-color: beige;
+    padding: 30px;
+    width: 50%;
+    border-radius: 75%;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profilepic {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 70%;
+}
+
+.profilepic > img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+}
+
+.menu {
+    list-style-type: none;
+    text-decoration: none;
+    justify-content: space-around;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: bisque;
+}
+
+a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+li {
+    padding: 20px;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    padding-top: 225px;
+    padding-left: 20px;
+    color: bisque;
+}
