@@ -2,8 +2,9 @@ body {
     height: 100%;
 }
 
-header > .header {
+header > {
     background-image: url("Overwatch\ Medium.jpeg");
-    position: fixed;
+    background-repeat: no-repeat;
+    background-position: top;
 }
 
