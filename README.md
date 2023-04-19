@@ -2,7 +2,7 @@
 my week_05 solo project developing an app for a bucket list style destination tracker.
 I have styled my specific app around the videogame Overwatch, in where heroes travel to different cities around the world saving the people from destruction.
 
-Functionality.
+Functionality/Brief
 ### MVP:
 
  * The app should allow the user to track countries and cities they want to visit and those they have visited.
@@ -21,7 +21,7 @@ Functionality.
 
 ### HOW TO RUN:
 
- Once repository pulled, into Solo_Project open integrated terminal:
+ Once repository pulled, open integrated terminal:
  * dropdb travel_app
  * createdb travel_app
  * psql -d travel_app -f db/travel_app.sql
