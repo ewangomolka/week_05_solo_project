@@ -10,7 +10,7 @@ body {
     margin: 0;
     font-family: Overwatch;
     background-image: url(horizon.jpeg);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
 }
 

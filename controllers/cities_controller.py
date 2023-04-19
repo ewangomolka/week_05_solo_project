@@ -7,10 +7,10 @@ city_blueprint = Blueprint("city", __name__)
 
 #HOME
 #GET /home
-
 @city_blueprint.route("/home")
 def home():
     return render_template("/home.html")
+
 #INDEX
 #GET /all_destinations
 @city_blueprint.route("/destinations")
@@ -18,6 +18,7 @@ def all_destinations():
     destinations = city_repository.select_all()
     print(len(destinations))
     return render_template("index.html", city_list=destinations)
+
 #SHOW
 #GET /all_destinations/<id>
 @city_blueprint.route("/destinations/<id>")

@@ -10,5 +10,5 @@ CREATE TABLE city (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     completed BOOLEAN,
-    country_id INT NOT NULL REFERENCES country(id)
+    country_id INT NOT NULL REFERENCES country(id) ON DELETE CASCADE
 );

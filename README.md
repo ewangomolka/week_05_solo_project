@@ -1,5 +1,6 @@
 # week_05_solo_project
-my week_05 solo project developing an app for a bucket list style destination tracker
+my week_05 solo project developing an app for a bucket list style destination tracker.
+I have styled my specific app around the videogame Overwatch, in where heroes travel to different cities around the world saving the people from destruction.
 
 Functionality.
 ### MVP:
@@ -10,7 +11,7 @@ Functionality.
  * The user should be able to create and delete entries for cities
  * The app should allow the user to mark destinations as visited or still to see.
  
-### EXTENSION:
+### EXTENSION (completed extensions):
 
  * Have separate pages for destinations visited and those still to visit.
 
