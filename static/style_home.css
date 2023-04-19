@@ -93,6 +93,12 @@ li {
 
 a {
     text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: orange;
 }
 
 .text {

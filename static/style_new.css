@@ -96,10 +96,14 @@ footer {
     justify-content: left;
     padding-top: 225px;
     padding-left: 20px;
-    color: bisque;
+    color: black;
 }
 
 p > a {
     text-decoration: underline;
     color: black;
+}
+
+div > input {
+    width: 123px;
 }
